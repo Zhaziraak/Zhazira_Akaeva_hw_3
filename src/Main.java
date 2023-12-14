@@ -4,55 +4,27 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-
-        double[] numbers = {2.6, 96.03, -14.99, 1.6, -6.001, -10.9,
-                5.1, 0.7, -9.3, 5.7, -6.77, -7.8, 11.8, -10.10, 44.4};
-        double summ = 0;
+        double [] numbers = {12.36, 2.1, -8.6, 9.10, 71.66, -6.25, 14.14, 1.98,
+                44.66, -9.11, 37.5, -7.96, 12.3, -79,2, 5.6, };
+        double summa = 0;
         double count = 0;
-        boolean foundLessNumber = false;
+        boolean ABC = false;
 
-        for (double eachNumber : numbers) {
-            if (foundLessNumber) {
+        for (double eachNumber: numbers) {
+            if (ABC) {
                 if (eachNumber > 0) {
-                    summ += eachNumber;
-                    count++;
+                    summa = summa + eachNumber;
+                    count = count + 1;
                 }
-            }else if (eachNumber<0){
-                foundLessNumber = true;
+            }else if (eachNumber < 0){
+                ABC = true;
             }
         }
         System.out.println("Среднее арифметическое число всех " +
-                "положительных чисел (после первого отрицательного) = " + summ / count);
-        System.out.println();
-      Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Введите слово");
-        String word = scanner.next().replaceAll(" ", "").toLowerCase();
-
-        if (isPalindrome(word)){
-            System.out.println("Это полиндром");
-        } else {
-            System.out.println("Это не полиндром");
-        }
-
+                "положительных чисел (после первого отрицательного) = "
+                + (summa / count));
 
     }
-
-    private static boolean isPalindrome(String str) {
-        int left = 0;
-        int right = str.length()-1;
-
-        while (left < right){
-            if (str.charAt(left) != str.charAt(right)) {
-                return false;
-            }
-            left++;
-            right--;
-        }
-        return true;
-    }
-
-
 }
 
 
